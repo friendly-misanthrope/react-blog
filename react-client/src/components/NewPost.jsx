@@ -1,8 +1,8 @@
 const NewPost = (props) => {
   return (
-    <main>
+    <section>
       <h1>New Post</h1>
-    </main>
+    </section>
   );
 }
 

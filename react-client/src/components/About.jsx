@@ -1,8 +1,11 @@
 const About = (props) => {
+
+
+
   return (
-    <main>
-      <h1>About</h1>
-    </main>
+    <section>
+      <h1>About Content Goes Here</h1>
+    </section>
   );
 }
 

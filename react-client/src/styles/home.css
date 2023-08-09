@@ -1,40 +1,44 @@
-.header {
-  background-color: black;
-  color: whitesmoke;
-  top: 0;
-  margin: 0 auto;
-  padding: 1rem;
-  width: 100%;
-  text-align: center;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-around;
-  background-color: black;
-}
-
-.navbar > a {
-  color: whitesmoke;
-  text-decoration: none;
-}
-
-.navbar > a:hover {
-  text-decoration: underline;
-}
-
-.footer {
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  position: fixed;
-  display: flex;
-  background-color: black;
-  color: whitesmoke;
-  justify-content:space-evenly;
-  padding: 1rem;
-}
-
-.footer > p {
-  margin: 0;
-}
+    .header {
+      background-color: black;
+      color: whitesmoke;
+      top: 0;
+      margin: 0 auto;
+      padding: 1rem;
+      width: 100%;
+      text-align: center;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-around;
+      background-color: black;
+      background-repeat: repeat;
+      background-attachment: scroll;
+      background-position: 0% 0%;
+      position: sticky;
+      top: 0;
+      width: 100%;
+    }
+    .navbar > a {
+      color: whitesmoke;
+      text-decoration: none;
+    }
+    .navbar > a:hover {
+      text-decoration: underline;
+    }
+    .footer {
+      width: 100%;
+      background-repeat: repeat;
+      background-attachment: scroll;
+      background-position: 0% 0%;
+      position: fixed;
+      bottom: 0;
+      text-align: center;
+      display: flex;
+      background-color: black;
+      color: whitesmoke;
+      justify-content: space-evenly;
+      padding: 1rem;
+    }
+    .footer > p {
+      margin: 0;
+    }

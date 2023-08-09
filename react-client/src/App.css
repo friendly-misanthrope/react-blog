@@ -1,25 +1,4 @@
-/* .App {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 100vh;
-  background-color: papayawhip;
-} */
-
 .App {
   background-color: papayawhip;
   min-height: 100vh;
-}
-
-.page-missing-gif {
-  height: 35%;
-  width: 35%;
-  border-radius: 10px;
-  margin: 1rem auto;
-}
-
-.wooked {
-  margin: 1rem auto;
 }
