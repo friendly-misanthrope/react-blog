@@ -1,7 +1,7 @@
 const Header = (props) => {
   return (
-    <header>
-      <h1>Site Header</h1>
+    <header className="header">
+      <h1>React JS Blog</h1>
     </header>
   );
 }

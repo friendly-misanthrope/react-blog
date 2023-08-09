@@ -1,4 +1,4 @@
-.App {
+/* .App {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6,6 +6,11 @@
   text-align: center;
   min-height: 100vh;
   background-color: papayawhip;
+} */
+
+.App {
+  background-color: papayawhip;
+  min-height: 100vh;
 }
 
 .page-missing-gif {

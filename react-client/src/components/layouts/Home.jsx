@@ -9,8 +9,9 @@ const Home = (props) => {
 
   return (
     <main>
-      <Nav />
       <Header />
+      <Nav />
+  
       {
         location.pathname === '/' ?
           <Dashboard />

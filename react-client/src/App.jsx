@@ -1,13 +1,13 @@
 // import CSS and components here
 import './App.css'
+import './styles/home.css'
 import About from './components/About'
 import Home from './components/layouts/Home'
 import Missing from './components/Missing'
-
 import NewPost from './components/NewPost'
 import PostPage from './components/PostPage'
 import { useState, useEffect } from 'react'
-import { Routes, Route, useParams } from 'react-router-dom'
+import { Routes, Route, useParams, useNavigate } from 'react-router-dom'
 
 const App = () => {
   return (
@@ -21,7 +21,6 @@ const App = () => {
 
         <Route path='*' element={<Missing />} />
       </Routes>
-
     </div>
   );
 } 
