@@ -1,8 +1,6 @@
-
-
 const Dashboard = (props) => {
 
-  const { posts, setPosts } = props
+  const { posts} = props
 
   return (
     <section className="feed">
