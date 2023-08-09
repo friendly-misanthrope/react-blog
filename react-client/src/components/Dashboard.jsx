@@ -7,9 +7,13 @@ const Dashboard = (props) => {
       {
         posts.length ?
           posts.map((post) => (
-            <div key={post.id}>{post.body}</div>
+            <div className="post" key={post.id}>
+              <h3>{post.title}</h3>
+              <h5>Posted on {post.datetime}</h5>
+              <p>{post.body}</p>
+            </div>
           ))
-          : <p>There are No posts to display</p>
+          : <h3 className="no-posts">There are No posts to display</h3>
       }
     </section>
   );

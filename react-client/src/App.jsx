@@ -1,6 +1,7 @@
 // import CSS and components here
 import './App.css'
 import './styles/home.css'
+import './styles/dashboard.css'
 import About from './components/About'
 import Home from './components/layouts/Home'
 import Missing from './components/Missing'
@@ -31,6 +32,24 @@ const App = () => {
       title: "My third post",
       datetime: "August 01, 2023 1:21 PM",
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    },
+    {
+      id: 3,
+      title: "My third post",
+      datetime: "August 01, 2023 1:21 PM",
+      body: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    },
+    {
+      id: 3,
+      title: "My third post",
+      datetime: "August 01, 2023 1:21 PM",
+      body: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    },
+    {
+      id: 3,
+      title: "My third post",
+      datetime: "August 01, 2023 1:21 PM",
+      body: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
     }
   ])
   
@@ -44,7 +63,7 @@ const App = () => {
           <Route path='post' element={<NewPost />} />
           <Route path='post/:id' element={<PostPage />} />
           <Route path='about' element={<About />} />
-          
+
         </Route>
 
         <Route path='*' element={<Missing />} />
