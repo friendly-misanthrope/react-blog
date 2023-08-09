@@ -1,9 +1,18 @@
 
 
 const Dashboard = (props) => {
+
+  const { posts, setPosts } = props
+
   return (
-    <section>
-      <h3>This is the Dashboard content</h3>
+    <section className="feed">
+      {
+        posts.length ?
+          posts.map((post) => (
+            <div key={post.id}>{post.body}</div>
+          ))
+          : <p>There are No posts to display</p>
+      }
     </section>
   );
 }
