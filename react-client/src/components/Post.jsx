@@ -5,7 +5,7 @@ const Post = (props) => {
   const { post } = props
 
   return (
-    <article>
+    <article className="post">
       <Link to={`/post/${post.id}`}>
         <h3>{post.title}</h3>
         <h5>Posted on {post.datetime}</h5>

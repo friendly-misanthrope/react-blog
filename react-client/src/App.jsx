@@ -18,48 +18,48 @@ const App = () => {
     {
       id: 1,
       title: "My first post",
-      datetime: "August 01, 2023 1:21 PM",
+      datetime: "August 01, 2023 12:59 AM",
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
     },
     {
       id: 2,
       title: "My second post",
-      datetime: "August 01, 2023 1:21 PM",
+      datetime: "August 02, 2023 1:21 PM",
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
     },
     {
       id: 3,
       title: "My third post",
-      datetime: "August 01, 2023 1:21 PM",
+      datetime: "August 03, 2023 4:20 PM",
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
     },
     {
       id: 4,
-      title: "My third post",
-      datetime: "August 01, 2023 1:21 PM",
+      title: "My fourth post",
+      datetime: "August 04, 2023 10:59 PM",
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
     },
     {
       id: 5,
-      title: "My third post",
-      datetime: "August 01, 2023 1:21 PM",
+      title: "My fifth post",
+      datetime: "August 05, 2023 8:40 AM",
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
     },
     {
       id: 6,
-      title: "My third post",
+      title: "My sixth post",
       datetime: "August 01, 2023 1:21 PM",
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
     },
     {
       id: 7,
-      title: "My third post",
+      title: "My seventh post",
       datetime: "August 01, 2023 1:21 PM",
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
     },
     {
       id: 8,
-      title: "My third post",
+      title: "My eighth post",
       datetime: "August 01, 2023 1:21 PM",
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
     }
