@@ -4,6 +4,12 @@ const Nav = (props) => {
 
   const {search, setSearch} = props
 
+  const changeHandler = (e) => {
+    setSearch(prevState => {return {...prevState, [e.target.name]: e.target.value}})
+  }
+
+
+  
   const submitHandler = (e) => {
     e.preventDefault()
 
@@ -16,8 +22,8 @@ const Nav = (props) => {
       <Link to='/post'>New Post</Link>
       <Link to='/about'>About</Link>
       <form className='search-form' onSubmit={submitHandler}>
-        <label htmlFor="search"></label>
-        <input type="text" id="search" placeholder="Search Posts" value={search} onChange={setSearch}  />
+        <label htmlFor="search" />
+        <input type="text" name="query" id="search" placeholder="Search Posts" value={search.query} onChange={changeHandler}  />
       </form>
     </nav>
   );

@@ -1,3 +1,5 @@
+import Post from "./Post";
+
 const Dashboard = (props) => {
 
   const { posts} = props
@@ -6,14 +8,10 @@ const Dashboard = (props) => {
     <section className="feed">
       {
         posts.length ?
-          posts.map((post) => (
-            <div className="post" key={post.id}>
-              <h3>{post.title}</h3>
-              <h5>Posted on {post.datetime}</h5>
-              <p>{post.body}</p>
-            </div>
+          posts.map(post => (
+            <Post key={post.id} post={post} />
           ))
-          : <h3 className="no-posts">There are No posts to display</h3>
+            : <h3 className="no-posts">There are no posts to display</h3>
       }
     </section>
   );

@@ -34,19 +34,31 @@ const App = () => {
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
     },
     {
-      id: 3,
+      id: 4,
       title: "My third post",
       datetime: "August 01, 2023 1:21 PM",
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
     },
     {
-      id: 3,
+      id: 5,
       title: "My third post",
       datetime: "August 01, 2023 1:21 PM",
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
     },
     {
-      id: 3,
+      id: 6,
+      title: "My third post",
+      datetime: "August 01, 2023 1:21 PM",
+      body: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    },
+    {
+      id: 7,
+      title: "My third post",
+      datetime: "August 01, 2023 1:21 PM",
+      body: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    },
+    {
+      id: 8,
       title: "My third post",
       datetime: "August 01, 2023 1:21 PM",
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
