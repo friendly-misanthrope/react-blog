@@ -66,11 +66,18 @@ const App = () => {
     }
   ])
 
+  const [newPost, setNewPost] = useState({
+    id: posts.length + 1,
+    title: '',
+    datetime: '',
+    body: ''
+  })
+
 
   
   const handleDelete = (id) => {
-    const postList = posts.filter(post => post.id != id)
-    setPosts(postList)
+    const newPostList = posts.filter(post => post.id !== id)
+    setPosts(newPostList)
     navigate('/')
   }
 
