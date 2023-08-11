@@ -10,8 +10,6 @@ const PostPage = (props) => {
   
   const post = posts.find(post => post.id.toString() === id)
   
-  
-
   return (
     <section className='post-page'>
       <article className='post full-post'>

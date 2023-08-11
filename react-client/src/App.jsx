@@ -73,14 +73,18 @@ const App = () => {
     body: ''
   })
 
-
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setPosts(prevState => {return {...prevState, newPost}})
+    navigate(`/post/${newPost.id}`)
+  }
   
   const handleDelete = (id) => {
     const newPostList = posts.filter(post => post.id !== id)
     setPosts(newPostList)
     navigate('/')
   }
-
+  
   return (
     <div className='App'>
       <Routes>
@@ -88,7 +92,8 @@ const App = () => {
         search={search} setSearch={setSearch}
         posts={posts} setPosts={setPosts}  />}>
 
-          <Route path='post' element={<NewPost />} />
+          <Route path='post' element={<NewPost
+          newPost={newPost} setNewPost={setNewPost} />} />
 
           <Route path='post/:id' element={<PostPage 
           posts={posts} setPosts={setPosts}
