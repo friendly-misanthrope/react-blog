@@ -12,6 +12,12 @@ import { Routes, Route, useParams, useNavigate } from 'react-router-dom'
 
 const App = () => {
 
+  // const path = useParams()
+  // const str = path['*']
+  // const id = str[5]
+  
+  const { id } = useParams()
+  const navigate = useNavigate()
   const [search, setSearch] = useState('')
   const [searchResults, setSearchResults] = useState([])
   const [posts, setPosts] = useState([
@@ -48,23 +54,30 @@ const App = () => {
     {
       id: 6,
       title: "My sixth post",
-      datetime: "August 01, 2023 1:21 PM",
+      datetime: "August 06, 2023 3:31 PM",
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
     },
     {
       id: 7,
       title: "My seventh post",
-      datetime: "August 01, 2023 1:21 PM",
+      datetime: "August 07, 2023 9:18 PM",
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
     },
     {
       id: 8,
       title: "My eighth post",
-      datetime: "August 01, 2023 1:21 PM",
+      datetime: "August 08, 2023 2:16 AM",
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
     }
   ])
+
+
   
+  const handleDelete = (id) => {
+    const postList = posts.filter(post => post.id != id)
+    setPosts(postList)
+  }
+
   return (
     <div className='App'>
       <Routes>
@@ -73,7 +86,11 @@ const App = () => {
         posts={posts} setPosts={setPosts}  />}>
 
           <Route path='post' element={<NewPost />} />
-          <Route path='post/:id' element={<PostPage />} />
+
+          <Route path='post/:id' element={<PostPage 
+          posts={posts} setPosts={setPosts}
+          handleDelete={handleDelete} />} />
+
           <Route path='about' element={<About />} />
 
         </Route>
