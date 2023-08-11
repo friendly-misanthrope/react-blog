@@ -21,7 +21,7 @@ const PostPage = (props) => {
             <h2>{post.title}</h2>
             <p className="post-date">{post.datetime}</p>
             <p className="post-body">{post.body}</p>
-            <button onClick={handleDelete(post.id)}>Delete</button>
+            <button onClick={() => handleDelete(post.id)}>Delete</button>
           </>
               : <h2>Page Not Found</h2>
         }

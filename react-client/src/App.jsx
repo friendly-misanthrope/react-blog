@@ -11,11 +11,8 @@ import { useState, useEffect } from 'react'
 import { Routes, Route, useParams, useNavigate } from 'react-router-dom'
 
 const App = () => {
-
-  // const path = useParams()
-  // const str = path['*']
-  // const id = str[5]
   
+  const navigate = useNavigate()
   const [search, setSearch] = useState('')
   const [searchResults, setSearchResults] = useState([])
   const [posts, setPosts] = useState([
@@ -74,6 +71,7 @@ const App = () => {
   const handleDelete = (id) => {
     const postList = posts.filter(post => post.id != id)
     setPosts(postList)
+    navigate('/')
   }
 
   return (
