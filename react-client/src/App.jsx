@@ -16,8 +16,6 @@ const App = () => {
   // const str = path['*']
   // const id = str[5]
   
-  const { id } = useParams()
-  const navigate = useNavigate()
   const [search, setSearch] = useState('')
   const [searchResults, setSearchResults] = useState([])
   const [posts, setPosts] = useState([

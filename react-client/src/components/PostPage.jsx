@@ -5,8 +5,7 @@ const PostPage = (props) => {
 
   const{ id } = useParams()
   const navigate = useNavigate()
-  const { posts, setPosts } = props
-  const { handleDelete } = props
+  const { posts, handleDelete } = props
 
   
   const post = posts.find(post => post.id.toString() === id)
@@ -32,4 +31,6 @@ const PostPage = (props) => {
 }
 
 export default PostPage;
+
+
 
