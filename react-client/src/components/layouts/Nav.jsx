@@ -13,7 +13,7 @@ const Nav = (props) => {
       <Link to='/'>Home</Link>
       <Link to='/post'>New Post</Link>
       <Link to='/about'>About</Link>
-      <form className='search-form' onSubmit={submitHandler}>
+      <form className='search-form' >
         <label htmlFor="search" />
         <input type="text" name="query" id="search" placeholder="Search Posts" value={search.query} onChange={changeHandler}  />
       </form>
