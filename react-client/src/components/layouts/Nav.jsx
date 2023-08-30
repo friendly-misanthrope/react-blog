@@ -8,14 +8,6 @@ const Nav = (props) => {
     setSearch(e.target.value)
   }
 
-
-  
-  const submitHandler = (e) => {
-    e.preventDefault()
-
-
-  }
-
   return (
     <nav className="navbar">
       <Link to='/'>Home</Link>
