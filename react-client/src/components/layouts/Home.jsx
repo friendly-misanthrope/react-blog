@@ -8,7 +8,7 @@ const Home = (props) => {
   const location = useLocation()
 
   const { search, setSearch } = props
-  const { posts, setPosts } = props
+  const { posts } = props
 
   return (
     <main className="home">
@@ -17,7 +17,7 @@ const Home = (props) => {
   
       {
         location.pathname === '/' ?
-          <Dashboard posts={posts} />
+          <Dashboard posts={posts.reverse()} />
           :null
       }
       <Outlet />

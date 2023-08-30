@@ -74,13 +74,22 @@ const App = () => {
     body: ''
   })
 
+  useEffect(() => {
+    const results = posts.filter(post => 
+      ((post.body).toLowerCase()).includes(search.toLowerCase())
+      || ((post.title).toLowerCase()).includes(search.toLowerCase())
+    )
+      
+    setSearchResults(results.reverse())
+  },[posts, search])
+
   const handleSubmit = (e) => {
     e.preventDefault()
 
     setPosts(posts => {return [...posts, newPost]})
     
     setNewPost({
-      id: posts.length ? posts.length + 1 : 1,
+      id: posts.length + 1,
       title: '',
       datetime: format(new Date(), 'MMMM dd, yyyy pp'),
       body: ''
@@ -100,7 +109,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home 
         search={search} setSearch={setSearch}
-        posts={posts} setPosts={setPosts}  />}>
+        posts={searchResults} setPosts={setPosts} />}>
 
           <Route path='post' element={<NewPost
           newPost={newPost} setNewPost={setNewPost}

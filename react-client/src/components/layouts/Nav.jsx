@@ -5,7 +5,7 @@ const Nav = (props) => {
   const {search, setSearch} = props
 
   const changeHandler = (e) => {
-    setSearch(prevState => {return {...prevState, [e.target.name]: e.target.value}})
+    setSearch(e.target.value)
   }
 
 
