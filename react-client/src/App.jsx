@@ -9,6 +9,7 @@ import NewPost from './components/NewPost'
 import PostPage from './components/PostPage'
 import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
+import { format } from 'date-fns'
 
 const App = () => {
   
@@ -67,20 +68,25 @@ const App = () => {
   ])
 
   const [newPost, setNewPost] = useState({
-    id: posts.length + 1,
+    id: posts.length ? posts.length + 1 : 1,
     title: '',
-    datetime: '',
+    datetime: format(new Date(), 'MMMM dd, yyyy pp'),
     body: ''
   })
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault()
-  //   setPosts(prevState => {return {...prevState, newPost}})
-  //   navigate('/')
-  // }
-
   const handleSubmit = (e) => {
     e.preventDefault()
+
+    setPosts(posts => {return [...posts, newPost]})
+    
+    setNewPost({
+      id: posts.length ? posts.length + 1 : 1,
+      title: '',
+      datetime: format(new Date(), 'MMMM dd, yyyy pp'),
+      body: ''
+    })
+
+    navigate('/')
   }
   
   const handleDelete = (id) => {

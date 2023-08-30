@@ -8,12 +8,12 @@ const NewPost = (props) => {
 
   return (
     <section className="new-post">
-      <form onSubmit={() => handleSubmit(newPost)} className="new-post-form">
+      <form onSubmit={handleSubmit} className="new-post-form">
         <label htmlFor="title">Title:</label>
         <input type="text" id="title" name="title" onChange={handleChange} value={newPost.title} required />
 
         <label htmlFor="body">Post:</label>
-        <textarea name="body" id="body" cols="40" rows="6" onChange={handleChange} value={newPost.body}></textarea>
+        <textarea name="body" id="body" cols="40" rows="6" onChange={handleChange} value={newPost.body} required></textarea>
 
         <button type="submit">Post</button>
       </form>
