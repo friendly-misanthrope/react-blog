@@ -1,4 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom'
+import '../styles/missing.css'
 
 const Missing = (props) => {
 
@@ -6,10 +7,12 @@ const Missing = (props) => {
 
   return (
     <main>
-      <h1>Whoopsies, I can't find that page!</h1>
-      <img className='page-missing-gif' src="https://media.tenor.com/RpghvJN-ucgAAAAC/sorry.gif" alt="Puppy looking sorry" />
-      <h4 className='wooked'>I looked hard, I pwomise!</h4>
-      <button onClick={() => {navigate(-1)}} className='btn btn-primary'>Go Back</button>
+      <div className="missing-container">
+        <h1>Whoopsies, I can't find that page!</h1>
+        <img className='page-missing-gif' src="https://media.tenor.com/RpghvJN-ucgAAAAC/sorry.gif" alt="Puppy looking sorry" />
+        <h4 className='wooked'>I looked hard, I pwomise!</h4>
+        <button onClick={() => {navigate(-1)}} className='btn btn-primary'>Go Back</button>
+      </div>
     </main>
   );
 }
