@@ -8,7 +8,7 @@ import Missing from './components/Missing'
 import NewPost from './components/NewPost'
 import PostPage from './components/PostPage'
 import { useState, useEffect } from 'react'
-import { Routes, Route, useParams, useNavigate } from 'react-router-dom'
+import { Routes, Route, useNavigate } from 'react-router-dom'
 
 const App = () => {
   
@@ -73,10 +73,14 @@ const App = () => {
     body: ''
   })
 
+  // const handleSubmit = (e) => {
+  //   e.preventDefault()
+  //   setPosts(prevState => {return {...prevState, newPost}})
+  //   navigate('/')
+  // }
+
   const handleSubmit = (e) => {
     e.preventDefault()
-    setPosts(prevState => {return {...prevState, newPost}})
-    navigate(`/post/${newPost.id}`)
   }
   
   const handleDelete = (id) => {
@@ -93,7 +97,8 @@ const App = () => {
         posts={posts} setPosts={setPosts}  />}>
 
           <Route path='post' element={<NewPost
-          newPost={newPost} setNewPost={setNewPost} />} />
+          newPost={newPost} setNewPost={setNewPost}
+          handleSubmit={handleSubmit} />} />
 
           <Route path='post/:id' element={<PostPage 
           posts={posts} setPosts={setPosts}

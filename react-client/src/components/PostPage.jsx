@@ -1,15 +1,14 @@
-import { useParams, Link, useNavigate } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useParams, Link } from 'react-router-dom'
 
 const PostPage = (props) => {
 
   const{ id } = useParams()
-  const navigate = useNavigate()
-  const { posts, handleDelete } = props
-
+  const { handleDelete } = props
+  const { posts } = props
   
   const post = posts.find(post => post.id.toString() === id)
-  
+  console.log(post)
+
   return (
     <section className='post-page'>
       <article className='post full-post'>
