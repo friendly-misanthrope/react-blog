@@ -1,10 +1,36 @@
+import '../styles/about.css'
+import { Link } from 'react-router-dom'
+
 const About = (props) => {
-
-
-
   return (
-    <section>
-      <h4>About Content Goes Here</h4>
+    <section className="about">
+      <div className="content-container">
+        <h2>About This Application</h2>
+        <p className="about-content">
+          ReactJS Blog is a frontend project that I undertook to build proficiency with React Router V6.<br />
+          As it is frontend only, post data is non-persistent and changes made by the user will be reset<br />
+          each time the page is reloaded or whenever the URL is changed manually.
+        </p>
+      </div>
+
+      <section className="technologies">
+        <h4>Technologies Utilized:</h4>
+        
+          <div className="all-stacks">
+            <div className="stack">
+              <p className="react">ReactJS</p>
+              <img src="./assets/react-logosvg.svg" alt="React logo" />
+            </div>
+
+          <div className="stack">
+            <p className="bootstrap">Bootstrap</p>
+            <img src="./assets/bootstrap-original.svg" alt="Bootstrap logo" />
+          </div>
+        </div>
+      </section>  
+
+      <Link to={"/"}className="btn btn-primary">Back to posts</Link>
+
     </section>
   );
 }
