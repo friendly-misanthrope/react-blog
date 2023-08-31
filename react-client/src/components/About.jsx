@@ -9,7 +9,7 @@ const About = (props) => {
         <p className="about-content">
           ReactJS Blog is a frontend project that I undertook to build proficiency with React Router V6.<br />
           As it is frontend only, post data is non-persistent and changes made by the user will be reset<br />
-          each time the page is reloaded or whenever the URL is changed manually.
+          each time the page is reloaded.
         </p>
       </div>
 
