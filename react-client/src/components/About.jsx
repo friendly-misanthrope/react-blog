@@ -24,10 +24,13 @@ const About = (props) => {
               </div>
             </Link>
 
-            <div className="stack">
-              <p className="bootstrap">Bootstrap</p>
-              <img src="./assets/bootstrap-original.svg" alt="Bootstrap logo" />
-            </div>
+            <Link to={"https://www.getbootstrap.com"}>
+              <div className="stack">
+                <p className="bootstrap">Bootstrap</p>
+                <img src="./assets/bootstrap-original.svg" alt="Bootstrap logo" />
+              </div>
+            </Link>
+
         </div>
       </section>  
 
