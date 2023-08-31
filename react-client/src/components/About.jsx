@@ -8,8 +8,8 @@ const About = (props) => {
         <h2>About This Application</h2>
         <p className="about-content">
           ReactJS Blog is a frontend project that I undertook to build proficiency with React Router V6.<br />
-          As it is frontend only, post data is non-persistent and changes made by the user will be reset<br />
-          each time the page is reloaded.
+          It uses a mock backend comprised of the json-server Node.js package and the Axios API to<br/>
+          persist post data locally.
         </p>
       </div>
 
@@ -24,6 +24,13 @@ const About = (props) => {
               </div>
             </Link>
 
+            <Link to={'https://nodejs.org'}>
+              <div className="stack">
+                <p className="node">Node.js</p>
+                <img src="./assets/node-js-svgrepo-com.svg" alt="NodeJS logo" />
+              </div>
+            </Link>
+
             <Link to={"https://www.getbootstrap.com"}>
               <div className="stack">
                 <p className="bootstrap">Bootstrap</p>
@@ -31,6 +38,19 @@ const About = (props) => {
               </div>
             </Link>
 
+            <Link to={'https://github.com/axios/axios'}>
+              <div className="stack">
+                <p className="axios">Axios</p>
+                <img src="./assets/axios-logo.svg" alt="Axios API logo" />
+              </div>
+            </Link>
+            
+            <Link to={'https://git-scm.com'}>
+              <div className="stack">
+                <p className="git">Git</p>
+                <img src="./assets/git-logo.svg" alt="Axios API logo" />
+              </div>
+            </Link>
         </div>
       </section>  
 

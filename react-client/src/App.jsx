@@ -13,7 +13,6 @@ import { format } from 'date-fns'
 import api from './api/posts'
 
 const App = () => {
-  
 
   const navigate = useNavigate()
   const [search, setSearch] = useState('')
@@ -32,7 +31,6 @@ const App = () => {
     const fetchPosts = async () => {
       try {
         const response = await api.get('/posts')
-        
         setPosts(response.data)
       }
       catch(e) {
@@ -50,7 +48,6 @@ const App = () => {
     )
       
     setSearchResults(results.reverse())
-    console.log(posts)
   },[posts, search])
 
   const handleSubmit = async(e) => {
@@ -71,10 +68,16 @@ const App = () => {
     }
   }
   
-  const handleDelete = (id) => {
-    const newPostList = posts.filter(post => post.id !== id)
-    setPosts(newPostList)
-    navigate('/')
+  const handleDelete = async (id) => {
+    try {
+      await api.delete(`/posts/${id}`)
+      const newPostList = posts.filter(post => post.id !== id)
+      setPosts(newPostList)
+      navigate('/')
+    }
+    catch(e) {
+      console.log(e)
+    }
   }
   
   return (
