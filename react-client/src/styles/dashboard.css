@@ -28,3 +28,8 @@
 .post > p {
   margin: 0;
 }
+
+.post-body {
+  white-space: pre-line;
+
+}
