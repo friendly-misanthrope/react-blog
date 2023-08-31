@@ -10,6 +10,7 @@ const NewPost = (props) => {
 
   return (
     <section className="new-post">
+      <h2>New Blog Post</h2>
       <form onSubmit={handleSubmit} className="new-post-form">
         
         <label htmlFor="title">Title:</label>

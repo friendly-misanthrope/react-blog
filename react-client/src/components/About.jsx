@@ -17,10 +17,12 @@ const About = (props) => {
         <h4>Technologies Utilized:</h4>
         
           <div className="all-stacks">
-            <div className="stack">
-              <p className="react">ReactJS</p>
-              <img src="./assets/react-logosvg.svg" alt="React logo" />
-            </div>
+            <Link to={'https://react.dev'}>
+              <div className="stack">
+                <p className="react">ReactJS</p>
+                <img src="./assets/react-logosvg.svg" alt="React logo" />
+              </div>
+            </Link>
 
             <div className="stack">
               <p className="bootstrap">Bootstrap</p>
@@ -29,7 +31,7 @@ const About = (props) => {
         </div>
       </section>  
 
-      <Link to={"/"}className="btn btn-primary">Back to posts</Link>
+      <Link to={"/"} className="btn btn-primary">Back to posts</Link>
 
     </section>
   );
