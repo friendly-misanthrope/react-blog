@@ -22,10 +22,10 @@ const About = (props) => {
               <img src="./assets/react-logosvg.svg" alt="React logo" />
             </div>
 
-          <div className="stack">
-            <p className="bootstrap">Bootstrap</p>
-            <img src="./assets/bootstrap-original.svg" alt="Bootstrap logo" />
-          </div>
+            <div className="stack">
+              <p className="bootstrap">Bootstrap</p>
+              <img src="./assets/bootstrap-original.svg" alt="Bootstrap logo" />
+            </div>
         </div>
       </section>  
 
