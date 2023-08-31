@@ -11,7 +11,7 @@ const NewPost = (props) => {
   return (
     <section className="new-post">
       <h2>New Blog Post</h2>
-      <form onSubmit={handleSubmit} className="new-post-form">
+      <form onSubmit={handleSubmit} method="post" className="new-post-form">
         
         <label htmlFor="title">Title:</label>
         <input type="text" id="title" name="title" onChange={handleChange} value={newPost.title} required />

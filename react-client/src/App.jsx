@@ -10,20 +10,38 @@ import PostPage from './components/PostPage'
 import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 import { format } from 'date-fns'
+import api from './api/posts'
 
 const App = () => {
   
+
   const navigate = useNavigate()
   const [search, setSearch] = useState('')
   const [searchResults, setSearchResults] = useState([])
   const [posts, setPosts] = useState([])
 
   const [newPost, setNewPost] = useState({
-    id: posts.length ? posts.length + 1 : 1,
+    id: crypto.randomUUID(),
     title: '',
     datetime: format(new Date(), 'MMMM dd, yyyy pp'),
     body: ''
   })
+
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const response = await api.get('/posts')
+        
+        setPosts(response.data)
+      }
+      catch(e) {
+        console.log(e)
+      }
+    }
+
+    fetchPosts()
+  },[])
 
   useEffect(() => {
     const results = posts.filter(post => 
@@ -32,21 +50,25 @@ const App = () => {
     )
       
     setSearchResults(results.reverse())
+    console.log(posts)
   },[posts, search])
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault()
-
-    setPosts(posts => {return [...posts, newPost]})
-    
-    setNewPost({
-      id: posts.length + 1,
-      title: '',
-      datetime: format(new Date(), 'MMMM dd, yyyy pp'),
-      body: ''
-    })
-
-    navigate('/')
+    try {
+      const response = await api.post('/posts', newPost)
+      setPosts([...posts, response.data])
+      setNewPost({
+        id: '',
+        title: '',
+        datetime: format(new Date(), 'MMMM dd, yyyy pp'),
+        body: ''
+      })
+      navigate('/')
+    }
+    catch(e) {
+      console.log(e)
+    }
   }
   
   const handleDelete = (id) => {
