@@ -1,3 +1,22 @@
 {
-  "posts": []
+  "posts": [
+    {
+      "id": 1,
+      "title": "Another turning point",
+      "datetime": "8/31/2023, 5:23:58 AM",
+      "body": "A fork stuck in the road\nTime grabs you by the wrist, directs you where to go\nSo make the best of this test and don't ask why\nIt's not a question, but a lesson learned in life\nIt's something unpredictable, but in the end is right\nI hope you had the time of your life"
+    },
+    {
+      "id": 2,
+      "title": "I had a rough day",
+      "datetime": "8/31/2023, 5:24:27 AM",
+      "body": "But that's life, it happens\nWoke up on a dark side of my mattress\nI guess I forgot to set my clock,\nOverslept - almost lost the job\nAnd to top it off, I'm kinda hungry\nBut can't eat till I find my money\nIt's in my wallet but my wallet ain't in my pocket,\nCan't remember the last time I saw it!"
+    },
+    {
+      "id": 3,
+      "title": "Summer's End",
+      "datetime": "8/31/2023, 5:24:41 AM",
+      "body": "Is around the bend\nJust flying\nThe swimming suits are on the line\nJust drying\nI'll meet you there per our conversation\nI hope I didn't ruin your whole vacation\nWell you never know how far from home you're feeling\nUntil you watch the shadows cross the ceiling\nWell I don't know but I can see it snowing\nIn your car the windows are wide open\nCome on home"
+    }
+  ]
 }

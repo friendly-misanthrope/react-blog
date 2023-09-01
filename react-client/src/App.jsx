@@ -22,7 +22,7 @@ const App = () => {
   const [newPost, setNewPost] = useState({
     id: crypto.randomUUID(),
     title: '',
-    datetime: format(new Date(), 'MMMM dd, yyyy pp'),
+    datetime: new Date().toLocaleString({ day: 'numeric', hour: '2-digit', minute: '2-digit'}),
     body: ''
   })
 
@@ -58,7 +58,7 @@ const App = () => {
       setNewPost({
         id: '',
         title: '',
-        datetime: format(new Date(), 'MMMM dd, yyyy pp'),
+        datetime: new Date().toLocaleString({ day: 'numeric', hour: '2-digit', minute: '2-digit'}),
         body: ''
       })
       navigate('/')

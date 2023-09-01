@@ -7,8 +7,8 @@ const About = (props) => {
       <div className="content-container">
         <h2>About This Application</h2>
         <p className="about-content">
-          ReactJS Blog is a frontend project that I undertook to build proficiency with React Router V6.<br />
-          It uses a mock backend comprised of the json-server Node.js package and the Axios API to<br/>
+          ReactJS Blog is a frontend project that I undertook to build proficiency with React Router V6.
+          It uses a mock backend comprised of the json-server Node.js package and the Axios API to
           persist post data locally.
         </p>
       </div>

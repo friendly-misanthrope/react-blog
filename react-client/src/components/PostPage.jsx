@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
+import '../styles/post-page.css'
 
 const PostPage = (props) => {
 
@@ -13,7 +14,7 @@ const PostPage = (props) => {
           post ?
           <>
             <h2>{post.title}</h2>
-            <p className="post-date">{post.datetime}</p>
+            <p className="post-date">Posted <span>{post.datetime}</span></p>
             <p className="post-body">{post.body}</p>
             <button onClick={() => handleDelete(post.id)}>Delete</button>
           </>
