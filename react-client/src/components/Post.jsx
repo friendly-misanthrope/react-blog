@@ -10,7 +10,12 @@ const Post = (props) => {
       <article className="post">
       
       <h3>{post.title}</h3>
-      <h5>Posted {post.datetime}</h5>
+      <h5>Posted {post.createdAt}</h5>
+      {
+        post.updatedAt ?
+          <p>Updated {post.updatedAt}</p>
+          : null
+      }
     
 
     <p className="post-body">

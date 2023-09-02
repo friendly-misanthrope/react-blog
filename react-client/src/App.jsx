@@ -14,7 +14,6 @@ import api from './api/posts'
 
 const App = () => {
 
-  const navigate = useNavigate()
   const [search, setSearch] = useState('')
   const [searchResults, setSearchResults] = useState([])
   const [posts, setPosts] = useState([])
@@ -22,10 +21,17 @@ const App = () => {
   const [newPost, setNewPost] = useState({
     id: crypto.randomUUID(),
     title: '',
-    datetime: new Date().toLocaleString({ day: 'numeric', hour: '2-digit', minute: '2-digit'}),
-    body: ''
+    body: '',
+    createdAt: new Date().toLocaleString({ day: 'numeric', hour: '2-digit', minute: '2-digit'})
   })
 
+  const [editPost, setEditPost] = useState({
+    title: '',
+    body: '',
+    updatedAt: new Date().toLocaleString({ day: 'numeric', hour: '2-digit', minute: '2-digit'})
+  })
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -56,15 +62,25 @@ const App = () => {
       const response = await api.post('/posts', newPost)
       setPosts([...posts, response.data])
       setNewPost({
-        id: '',
+        id: crypto.randomUUID(),
         title: '',
-        datetime: new Date().toLocaleString({ day: 'numeric', hour: '2-digit', minute: '2-digit'}),
+        createdAt: new Date().toLocaleString({ day: 'numeric', hour: '2-digit', minute: '2-digit'}),
         body: ''
       })
       navigate('/')
     }
     catch(e) {
       console.log(e)
+    }
+  }
+
+  const handleEdit = async (e, id) => {
+    try {
+      e.preventDefault()
+      const response = api.put(`/posts/${id}`, editPost)
+      setPosts(posts.map(post => post.id === id ? {...response.data} : post ))
+    } catch(err) {
+      console.log(err)
     }
   }
   

@@ -14,7 +14,7 @@ const NewPost = (props) => {
       <form onSubmit={handleSubmit} method="post" className="new-post-form">
         
         <label htmlFor="title">Title:</label>
-        <input type="text" id="title" name="title" onChange={handleChange} value={newPost.title} required />
+        <input type="text" id="title" name="title" onChange={handleChange} value={newPost.title} autofocus="autofocus" required />
 
         <label htmlFor="body">Post:</label>
         <textarea name="body" id="body" cols="40" rows="6" onChange={handleChange} value={newPost.body} wrap="hard" required></textarea>
