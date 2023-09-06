@@ -1,16 +1,18 @@
 {
   "posts": [
     {
-      "title": "asdfaf",
-      "body": "asdfasdf\n\nasdfasdfasdfasdf",
-      "updatedAt": "9/5/2023, 11:46:43 PM",
-      "id": "6b6a8418-06b2-4bf3-8e74-93b5c674d2d5"
+      "id": "e59759ac-99d1-412c-9ed8-fd73d691a1e4",
+      "title": "Testing",
+      "body": "Testing 12345",
+      "createdAt": "9/6/2023, 1:01:50 AM",
+      "updatedAt": "9/6/2023, 1:01:57 AM"
     },
     {
-      "title": "abcdef",
-      "body": "def",
-      "updatedAt": "9/5/2023, 11:47:15 PM",
-      "id": "d714b30c-69ca-4bc3-bc91-0bc64711e1fa"
+      "id": "9248a513-aa5a-4a45-8d0f-de76e1f86032",
+      "title": "Another Test",
+      "body": "This time a new post!",
+      "createdAt": "9/6/2023, 1:03:26 AM",
+      "updatedAt": null
     }
   ]
 }
