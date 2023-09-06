@@ -7,13 +7,11 @@ import Home from './components/layouts/Home'
 import Missing from './components/Missing'
 import NewPost from './components/NewPost'
 import PostPage from './components/PostPage'
-import EditPost from './components/EditPost'
 import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 import api from './api/posts'
 
 const App = () => {
-
   const [search, setSearch] = useState('')
   const [searchResults, setSearchResults] = useState([])
   const [posts, setPosts] = useState([])
@@ -22,13 +20,12 @@ const App = () => {
     id: crypto.randomUUID(),
     title: '',
     body: '',
-    createdAt: new Date().toLocaleString({ day: 'numeric', hour: '2-digit', minute: '2-digit'})
+    createdAt: new Date().toLocaleString({ day: 'numeric', hour: '2-digit', minute: '2-digit'}),
   })
 
   const [editPost, setEditPost] = useState({
     title: '',
-    body: '',
-    updatedAt: new Date().toLocaleString({ day: 'numeric', hour: '2-digit', minute: '2-digit'})
+    body: ''
   })
 
   const navigate = useNavigate()
@@ -62,11 +59,10 @@ const App = () => {
       const response = await api.post('/posts', newPost)
       setPosts([...posts, response.data])
       setNewPost({
-        id: crypto.randomUUID(),
         title: '',
-        createdAt: new Date().toLocaleString({ day: 'numeric', hour: '2-digit', minute: '2-digit'}),
         body: ''
       })
+      console.log(posts)
       navigate('/')
     }
     catch(e) {
@@ -74,20 +70,6 @@ const App = () => {
     }
   }
 
-  const handleEdit = async (id) => {
-    try {
-      const response = api.put(`/posts/${id}`, editPost)
-      setPosts(posts.map(post => post.id === id ? {...response.data} : post ))
-      setEditPost({
-        title: '',
-        body: ''
-      })
-      navigate('/')
-    } catch(err) {
-      console.log(err)
-    }
-  }
-  
   const handleDelete = async (id) => {
     try {
       await api.delete(`/posts/${id}`)
@@ -114,10 +96,6 @@ const App = () => {
           <Route path='post/:id' element={<PostPage 
           posts={posts} setPosts={setPosts}
           handleDelete={handleDelete} />} />
-
-          <Route path='post/:id/edit' element={<EditPost 
-          editPost={editPost} setEditPost={setEditPost}
-          handleEdit={handleEdit} />} />
 
           <Route path='about' element={<About />} />
 

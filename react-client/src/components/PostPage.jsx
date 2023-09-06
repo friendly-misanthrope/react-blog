@@ -14,9 +14,16 @@ const PostPage = (props) => {
           post ?
           <>
             <h2>{post.title}</h2>
-            <p className="post-date">Posted <span>{post.datetime}</span></p>
+            <p className="post-date">Posted <span>{post.createdAt}</span></p>
+
             <p className="post-body">{post.body}</p>
-            <button onClick={() => handleDelete(post.id)}>Delete</button>
+            
+            <div className="buttons">
+              {/* <Link to={`/post/${id}/edit`}>
+                <button>Edit</button>
+              </Link> */}
+              <button onClick={() => handleDelete(post.id)}>Delete</button>
+            </div>
           </>
               : <>
                   <h2>Post Not Found</h2>

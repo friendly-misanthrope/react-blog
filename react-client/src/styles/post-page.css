@@ -5,3 +5,8 @@
 .post-body {
   padding: 1rem;
 }
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
