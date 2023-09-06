@@ -7,6 +7,7 @@ import Home from './components/layouts/Home'
 import Missing from './components/Missing'
 import NewPost from './components/NewPost'
 import PostPage from './components/PostPage'
+import EditPost from './components/EditPost'
 import { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import api from './api/posts'
@@ -54,6 +55,9 @@ const App = () => {
           posts={posts} setPosts={setPosts} />} />
 
           <Route path='post/:id' element={<PostPage 
+          posts={posts} setPosts={setPosts} />} />
+
+          <Route path='post/:id/edit' element={<EditPost 
           posts={posts} setPosts={setPosts} />} />
 
           <Route path='about' element={<About />} />
