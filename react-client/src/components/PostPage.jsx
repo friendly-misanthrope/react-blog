@@ -1,5 +1,4 @@
 import { useParams, useNavigate, Link } from 'react-router-dom'
-import { useState } from 'react'
 import '../styles/post-page.css'
 import api from '../api/posts'
 
