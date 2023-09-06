@@ -1,11 +1,43 @@
 import '../styles/new-post.css'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import api from '../api/posts'
 
 const NewPost = (props) => {
 
-  const { newPost, setNewPost, handleSubmit } = props
+  const navigate = useNavigate()
+  const { posts, setPosts } = props
+  const [newPost, setNewPost] = useState({
+    id: crypto.randomUUID(),
+    title: '',
+    body: '',
+    createdAt: new Date().toLocaleString(),
+    updatedAt: null
+  })
 
   const handleChange = (e) => {
     setNewPost(prevState => {return {...prevState, [e.target.name]: e.target.value}})
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      const response = await api.post('/posts', newPost)
+      setPosts([...posts, response.data])
+      setNewPost({
+        id: crypto.randomUUID(),
+        title: '',
+        body: ''
+      })
+      console.log(newPost)
+      navigate('/')
+    } catch(err) {
+      if (err.response) {
+        console.log(err.response)
+      } else {
+        console.log(err.message)
+      }
+    }
   }
 
   return (

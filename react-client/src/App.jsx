@@ -8,7 +8,7 @@ import Missing from './components/Missing'
 import NewPost from './components/NewPost'
 import PostPage from './components/PostPage'
 import { useState, useEffect } from 'react'
-import { Routes, Route, useNavigate } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import api from './api/posts'
 
 const App = () => {
@@ -16,20 +16,7 @@ const App = () => {
   const [searchResults, setSearchResults] = useState([])
   const [posts, setPosts] = useState([])
 
-  const [newPost, setNewPost] = useState({
-    id: crypto.randomUUID(),
-    title: '',
-    body: '',
-    createdAt: new Date().toLocaleString({ day: 'numeric', hour: '2-digit', minute: '2-digit'}),
-  })
-
-  const [editPost, setEditPost] = useState({
-    title: '',
-    body: ''
-  })
-
-  const navigate = useNavigate()
-
+  // fetch all posts
   useEffect(() => {
     const fetchPosts = async () => {
       try {
@@ -37,10 +24,13 @@ const App = () => {
         setPosts(response.data)
       }
       catch(e) {
-        console.log(e)
+        if (e.response) {
+          console.log(e.response)
+        } else {
+          console.log(e.message)
+        }
       }
     }
-
     fetchPosts()
   },[])
 
@@ -52,50 +42,19 @@ const App = () => {
       
     setSearchResults(results.reverse())
   },[posts, search])
-
-  const handleSubmit = async(e) => {
-    e.preventDefault()
-    try {
-      const response = await api.post('/posts', newPost)
-      setPosts([...posts, response.data])
-      setNewPost({
-        title: '',
-        body: ''
-      })
-      console.log(posts)
-      navigate('/')
-    }
-    catch(e) {
-      console.log(e)
-    }
-  }
-
-  const handleDelete = async (id) => {
-    try {
-      await api.delete(`/posts/${id}`)
-      const newPostList = posts.filter(post => post.id !== id)
-      setPosts(newPostList)
-      navigate('/')
-    }
-    catch(e) {
-      console.log(e)
-    }
-  }
   
   return (
     <div className='App'>
       <Routes>
         <Route path='/' element={<Home 
         search={search} setSearch={setSearch}
-        posts={searchResults} setPosts={setPosts} />}> 
+        posts={searchResults} />}> 
 
           <Route path='post' element={<NewPost
-          newPost={newPost} setNewPost={setNewPost}
-          handleSubmit={handleSubmit} />} />
+          posts={posts} setPosts={setPosts} />} />
 
           <Route path='post/:id' element={<PostPage 
-          posts={posts} setPosts={setPosts}
-          handleDelete={handleDelete} />} />
+          posts={posts} setPosts={setPosts} />} />
 
           <Route path='about' element={<About />} />
 
