@@ -11,7 +11,7 @@ const NewPost = (props) => {
     id: crypto.randomUUID(),
     title: '',
     body: '',
-    createdAt: new Date().toLocaleString(),
+    createdAt: null,
     updatedAt: null
   })
 
@@ -22,6 +22,7 @@ const NewPost = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
+      newPost.createdAt = new Date().toLocaleString()
       const response = await api.post('/posts', newPost)
       setPosts([...posts, response.data])
       setNewPost({
@@ -29,7 +30,6 @@ const NewPost = (props) => {
         title: '',
         body: ''
       })
-      console.log(newPost)
       navigate('/')
     } catch(err) {
       if (err.response) {

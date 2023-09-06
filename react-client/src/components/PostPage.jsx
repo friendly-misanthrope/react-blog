@@ -10,12 +10,6 @@ const PostPage = (props) => {
   const { posts, setPosts } = props
   const post = posts.find(post => post.id.toString() === id)
 
-  const [postToEdit, setPostToEdit] = useState({
-    title: '',
-    body: '',
-    updatedAt: new Date().toLocaleString()
-  })
-
   const handleDelete = (id) => {
     api.delete(`/posts/${id}`)
       .then(() => {

@@ -1,10 +1,10 @@
 {
   "posts": [
     {
-      "id": "25c84ee3-19cf-435d-a522-28a5bb61b382",
-      "title": "Test",
-      "body": "This is a test post",
-      "createdAt": "9/5/2023, 9:55:37 PM",
+      "id": "83ea944d-b8ba-4e34-b9ee-535eeae81404",
+      "title": "this is a new post",
+      "body": "testing testing 123",
+      "createdAt": "9/5/2023, 10:28:12 PM",
       "updatedAt": null
     }
   ]
