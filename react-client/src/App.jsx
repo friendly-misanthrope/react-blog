@@ -7,9 +7,9 @@ import Home from './components/layouts/Home'
 import Missing from './components/Missing'
 import NewPost from './components/NewPost'
 import PostPage from './components/PostPage'
+import EditPost from './components/EditPost'
 import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
-import { format } from 'date-fns'
 import api from './api/posts'
 
 const App = () => {
@@ -74,11 +74,15 @@ const App = () => {
     }
   }
 
-  const handleEdit = async (e, id) => {
+  const handleEdit = async (id) => {
     try {
-      e.preventDefault()
       const response = api.put(`/posts/${id}`, editPost)
       setPosts(posts.map(post => post.id === id ? {...response.data} : post ))
+      setEditPost({
+        title: '',
+        body: ''
+      })
+      navigate('/')
     } catch(err) {
       console.log(err)
     }
@@ -101,7 +105,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home 
         search={search} setSearch={setSearch}
-        posts={searchResults} setPosts={setPosts} />}>
+        posts={searchResults} setPosts={setPosts} />}> 
 
           <Route path='post' element={<NewPost
           newPost={newPost} setNewPost={setNewPost}
@@ -110,6 +114,10 @@ const App = () => {
           <Route path='post/:id' element={<PostPage 
           posts={posts} setPosts={setPosts}
           handleDelete={handleDelete} />} />
+
+          <Route path='post/:id/edit' element={<EditPost 
+          editPost={editPost} setEditPost={setEditPost}
+          handleEdit={handleEdit} />} />
 
           <Route path='about' element={<About />} />
 
