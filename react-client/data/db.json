@@ -1,18 +1,25 @@
 {
   "posts": [
     {
-      "id": "e59759ac-99d1-412c-9ed8-fd73d691a1e4",
-      "title": "Testing",
-      "body": "Testing 12345",
-      "createdAt": "9/6/2023, 1:01:50 AM",
-      "updatedAt": "9/6/2023, 1:01:57 AM"
+      "id": "56338bb8-0c85-4b16-8c06-1a025df0bad0",
+      "title": "Summer's End",
+      "body": "Is around the bend just flyin'\nThe swimming suits are on the line just dryin'\nI'll meet you there per our conversation\nI hope I didn't ruin your whole vacation\nWell you never know how far from home you're feeling\nUntil you watch the shadows cross the ceiling\nWell I don't know, but I can see it snowing\nIn your car the windows are wide open\nCome on home",
+      "createdAt": "9/6/2023, 1:23:56 AM",
+      "updatedAt": null
     },
     {
-      "id": "9248a513-aa5a-4a45-8d0f-de76e1f86032",
-      "title": "Another Test",
-      "body": "This time a new post!",
-      "createdAt": "9/6/2023, 1:03:26 AM",
-      "updatedAt": null
+      "id": "9126f76e-009f-4c62-a879-72f11f79134d",
+      "title": "Had a Rough Day",
+      "body": "But that's life, it happens\nWoke up on the dark side of my mattress\nI guess I forgot to set my clock\nOverslept, almost lost the job\nAnd to top it off, I'm kinda hungry\nBut can't eat till I find my money\nIt's in my wallet but my wallet ain't in my pocket\nCan't remember the last time I saw it!\n\nAnd they don't want me in a bad mood\nAfraid that it'll spread and everyone will catch an attitude\nThey got 'em all singing the same tune,\nThinking I should go and start a fire in the break room!",
+      "createdAt": "9/6/2023, 1:25:42 AM",
+      "updatedAt": "9/6/2023, 1:29:17 AM"
+    },
+    {
+      "id": "591a7bba-80b7-4f84-87c0-4691507437a8",
+      "title": "Test Post",
+      "body": "This is a test post\nLine breaks should be\nvisible\n\nEdited",
+      "createdAt": "9/6/2023, 5:42:31 PM",
+      "updatedAt": "9/6/2023, 5:42:44 PM"
     }
   ]
 }
