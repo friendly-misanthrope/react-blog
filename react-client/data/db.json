@@ -8,11 +8,39 @@
       "updatedAt": null
     },
     {
-      "id": "9126f76e-009f-4c62-a879-72f11f79134d",
-      "title": "Had a Rough Day",
-      "body": "But that's life, it happens\nWoke up on the dark side of my mattress\nI guess I forgot to set my clock\nOverslept, almost lost the job\nAnd to top it off, I'm kinda hungry\nBut can't eat till I find my money\nIt's in my wallet but my wallet ain't in my pocket\nCan't remember the last time I saw it\n\nAnd they don't want me in a bad mood\nAfraid that it'll spread and everyone will catch an attitude\nThey got 'em all singing the same tune,\nThinking I should go and start a fire in the break room",
-      "createdAt": "9/6/2023, 1:25:42 AM",
-      "updatedAt": "9/6/2023, 8:07:30 PM"
+      "id": "f7467da3-a2a6-497a-bbe7-8e4ff84d690a",
+      "title": "I had a rough day",
+      "body": "But that's life, it happens\nWoke up on a dark side of my mattress\nI guess I forgot to set my clock\nOverslept - almost lost the job",
+      "createdAt": "9/6/2023, 10:04:43 PM",
+      "updatedAt": "9/6/2023, 10:05:01 PM"
+    },
+    {
+      "id": "93bcdda4-8093-4822-97c1-56d313aa1819",
+      "title": "None Shall Pass",
+      "body": "I will remember your name and face\nOn the day you are judged by The Funhouse cast\nAnd I will rejoice in your fall from grace\nWith a cane to the sky like \n\"None shall pass\"",
+      "createdAt": "9/6/2023, 10:16:05 PM",
+      "updatedAt": null
+    },
+    {
+      "id": "dab16448-7f83-4d13-a750-17fd0dd823bd",
+      "title": "The days get shorter",
+      "body": "and the nights get cold,\nI like the autumn but this place is getting old\nI pack up my belongings and I head for the coast,\nIt might not be a lot but I feel like I'm making the most",
+      "createdAt": "9/6/2023, 10:21:26 PM",
+      "updatedAt": "9/6/2023, 10:21:52 PM"
+    },
+    {
+      "id": "7e484661-0aee-4910-8fb2-2cda2be6417c",
+      "title": "I've been waiting",
+      "body": "on some good news,\nFor the clouds to part and let the light shine through\nI wanna wake up to a better tomorrow\nI've had enough, where is the trust, where is the truth, it's about time for some good news",
+      "createdAt": "9/6/2023, 10:25:59 PM",
+      "updatedAt": "9/6/2023, 10:28:49 PM"
+    },
+    {
+      "id": "56de9cd2-74cf-423d-8819-4bb2f919d7ee",
+      "title": "So Tired",
+      "body": "of trying to please everyone,\nA million different opinions\nI'm just going to be myself whether they like it or not\nI'm giving it all that I got",
+      "createdAt": "9/6/2023, 10:45:07 PM",
+      "updatedAt": "9/6/2023, 10:46:48 PM"
     }
   ]
 }
