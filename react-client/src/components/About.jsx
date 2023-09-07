@@ -53,7 +53,15 @@ const About = (props) => {
         </div>
       </section>  
 
-      <Link to={"/"} className="btn btn-primary">Back to posts</Link>
+      <div className="buttons">
+        <Link to={"https://www.github.com/friendly-misanthrope/react-blog"} >
+          <button className="btn btn-secondary">View Source Code</button>
+        </Link>
+        <Link to={"/"}>
+          <button className="btn btn-primary">Back to Posts</button>
+        </Link>
+      </div>
+
 
     </section>
   );
