@@ -1,4 +1,3 @@
-import '../styles/new-post.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import api from '../api/posts'
@@ -46,10 +45,10 @@ const NewPost = (props) => {
       <form onSubmit={handleSubmit} method="post" className="new-post-form">
         
         <label htmlFor="title">Title:</label>
-        <input type="text" id="title" name="title" onChange={handleChange} value={newPost.title} autoFocus="autofocus" required />
+        <input type="text" id="title" name="title" maxLength={32} onChange={handleChange} value={newPost.title} autoFocus="autofocus" required />
 
         <label htmlFor="body">Post:</label>
-        <textarea name="body" id="body" cols="40" rows="6" onChange={handleChange} value={newPost.body} wrap="hard" required></textarea>
+        <textarea name="body" id="body" cols="40" rows="6" maxLength={280} onChange={handleChange} value={newPost.body} wrap="hard" required></textarea>
 
         <button type="submit" className='btn btn-primary'>Post</button>
       </form>

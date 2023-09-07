@@ -64,10 +64,10 @@ const EditPost = (props) => {
       <h2>Edit Blog Post</h2>
       <form className="new-post-form" method='put' onSubmit={(e) => e.preventDefault()}>
         <label htmlFor="title">Title</label>
-        <input type="text" id="title" name="title" onChange={handleChange} value={editPost.title} />
+        <input type="text" id="title" name="title" maxLength={32} onChange={handleChange} value={editPost.title} />
 
         <label htmlFor="body">Post:</label>
-        <textarea name="body" id="body" cols="40" rows="6" onChange={handleChange} value={editPost.body} />
+        <textarea name="body" id="body" cols="40" rows="6" maxLength={280} onChange={handleChange} value={editPost.body} />
         <button className="btn btn-primary" onClick={() => handleEdit(id)}>Submit</button>
       </form>
     </section>

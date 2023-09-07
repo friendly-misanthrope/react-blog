@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-import '../styles/post.css'
 
 const Post = (props) => {
 
@@ -11,11 +10,6 @@ const Post = (props) => {
       
       <h3>{post.title}</h3>
       <h5>Posted {post.createdAt}</h5>
-      {
-        post.updatedAt ?
-          <p>Updated {post.updatedAt}</p>
-          : null
-      }
     
 
     <p className="post-body">

@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom'
-import '../styles/missing.css'
 
 const Missing = (props) => {
 

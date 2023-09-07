@@ -1,7 +1,5 @@
 // import CSS and components here
-import './App.css'
-import './styles/home.css'
-import './styles/dashboard.css'
+import './styles/styles.css'
 import About from './components/About'
 import Home from './components/layouts/Home'
 import Missing from './components/Missing'

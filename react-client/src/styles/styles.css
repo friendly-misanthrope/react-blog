@@ -1,0 +1,208 @@
+/********** Global Styles **********/
+.App {
+  width: 100%;
+  background-color: papayawhip;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/********** About Page **********/
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem auto;
+  max-width: 38rem;
+}
+
+.content-container h2 {
+  text-align: center;
+}
+
+.technologies h4 {
+  margin: 0;
+  text-align: center;
+}
+
+.all-stacks {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  text-align: flex-start;
+  align-items: center;
+  box-shadow: 2px 2px 6px rgb(28, 21, 9);
+  background-color: rgb(238, 219, 188);
+  border-radius: 1rem;
+  width: 6.5rem;
+  margin: 1rem 0.5rem;
+  padding: 0.5rem;
+}
+
+.all-stacks a {
+  text-decoration: none;
+  color: var(--bs-body-color);
+}
+
+.stack > p {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.stack img {
+  height: 4rem;
+  width: 4rem;
+  margin: 0;
+  /* background-color: rgb(118, 152, 215); */
+  background-color: #F8F0E3;
+}
+
+
+/********** Dashboard Page **********/
+.dashboard-header {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 1rem auto;
+}
+
+.feed {
+  max-width: 30rem;
+  max-height: 40rem;
+  margin: 2rem auto;
+  background-color: lightgray;
+  padding: 1.5rem;
+  text-align: center;
+  overflow-y: auto;
+  box-shadow: 2px 2px 8px var(--bs-body-color);
+}
+
+.feed > .no-posts {
+  text-align: center;
+}
+
+.feed a {
+  text-decoration: none;
+  color: var(--bs-body-color);
+}
+
+.post {
+  text-align: center;
+  max-width: 25rem;
+  margin: 1rem auto;
+  border-radius: 1rem;
+  padding: 0.2rem 0.5rem;
+  background-color: lightblue;
+  box-shadow: 4px 2px 8px darkgray;
+}
+
+.post > a {
+  text-decoration: none;
+  color: rgb(50, 56, 56);
+}
+
+.post > p {
+  margin: 0;
+}
+
+.full-post .post-body {
+  white-space: pre-line;
+  overflow-y: auto;
+  margin: 1rem auto;
+}
+
+
+/***** Home (Shared components)*****/
+.header {
+  background-color: black;
+  color: whitesmoke;
+  top: 0;
+  margin: 0 auto;
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+}
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-position: 0% 0%;
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+.navbar > a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+.navbar > a:hover {
+  text-decoration: underline;
+}
+.footer {
+  width: 100%;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-position: 0% 0%;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  display: flex;
+  background-color: black;
+  color: whitesmoke;
+  justify-content: space-evenly;
+  padding: 0.4rem;
+}
+.footer > p {
+  margin: 0;
+}
+
+
+/********** Missing page (404) **********/
+.missing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.missing-container > h1 {
+  margin-top: 5rem;
+}
+
+img {
+  margin: 0 auto;
+  border-radius: 2rem;
+}
+
+
+/********** New Post Page **********/
+.new-post h2 {
+  text-align: center;
+  margin: 2rem auto 0;
+}
+
+.new-post-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 25rem;
+  margin: 1rem auto;
+}
+
+.new-post-form label {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/********** View Post page **********/
+.post-date {
+  font-weight: bold;
+}
+
+.buttons button {
+  margin: 0 0.5rem 1rem;
+}
