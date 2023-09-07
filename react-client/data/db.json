@@ -20,6 +20,13 @@
       "body": "This is a test post\nLine breaks should be\nvisible\n\nEdited",
       "createdAt": "9/6/2023, 5:42:31 PM",
       "updatedAt": "9/6/2023, 5:42:44 PM"
+    },
+    {
+      "id": "315b92e5-9bb0-4359-84b9-f7e8775bde15",
+      "title": "testing",
+      "body": "testing 123\nlorem ipsum dolor sit amet consecteteur blah more lorem ipsum something something test text yada yada bleh woof",
+      "createdAt": "9/6/2023, 7:18:05 PM",
+      "updatedAt": null
     }
   ]
 }
