@@ -11,10 +11,10 @@ const Dashboard = (props) => {
         {
           posts.length ?
             posts.map(post => (
-              <>
-                <Post key={post.id} post={post} />
+              <div key={post.id}>
+                <Post post={post} />
                 <hr />
-              </>
+              </div>
 
             ))
             : <h3 className="no-posts">There are no posts to display</h3>
