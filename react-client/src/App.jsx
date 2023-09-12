@@ -8,32 +8,22 @@ import PostPage from './components/PostPage'
 import EditPost from './components/EditPost'
 import { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import api from './api/posts'
+import useAxiosFetch from './hooks/useAxiosFetch'
 
 
 const App = () => {
   const [search, setSearch] = useState('')
   const [searchResults, setSearchResults] = useState([])
   const [posts, setPosts] = useState([])
+  const { data, fetchError, isLoading } = useAxiosFetch("http://localhost:3500/posts")
   
 
   // fetch all posts
+  
+
   useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const response = await api.get('/posts')
-        setPosts(response.data)
-      }
-      catch(e) {
-        if (e.response) {
-          console.log(e.response)
-        } else {
-          console.log(e.message)
-        }
-      }
-    }
-    fetchPosts()
-  },[])
+    setPosts(data)
+  },[data])
 
   useEffect(() => {
     const results = posts.filter(post => 

@@ -20,13 +20,14 @@ const useAxiosFetch = (endpoint) => {
           setData(req.data)
           setFetchError(null)
         }
-        
       })
       .catch((err) => {
         if (isMounted) {
-          setFetchError(err.message)
-          setData([])
+          if (axios.isCancel(err)) {
+          console.error('request cancelled', err.message)
+          }
         }
+        
       })
       isMounted && setTimeout(() => setIsLoading(false), 1500)
     }
