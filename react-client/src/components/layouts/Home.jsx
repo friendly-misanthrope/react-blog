@@ -3,16 +3,18 @@ import Nav from "./Nav"
 import Footer from "./Footer"
 import Dashboard from "../Dashboard"
 import { useLocation, Outlet } from 'react-router-dom'
+import useWindowSize from '../../hooks/useWindowSize'
+
 
 const Home = (props) => {
+  const { width } = useWindowSize()
   const location = useLocation()
-
   const { search, setSearch } = props
   const { posts } = props
 
   return (
     <main className="home">
-      <Header />
+      <Header width={width} />
       <Nav search={search} setSearch={setSearch} />
   
       {

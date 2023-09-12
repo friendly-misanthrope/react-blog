@@ -9,13 +9,13 @@ import EditPost from './components/EditPost'
 import { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import api from './api/posts'
-import useWindowSize from './hooks/useWindowSize'
+
 
 const App = () => {
   const [search, setSearch] = useState('')
   const [searchResults, setSearchResults] = useState([])
   const [posts, setPosts] = useState([])
-  const { width } = useWindowSize()
+  
 
   // fetch all posts
   useEffect(() => {
@@ -49,8 +49,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home 
         search={search} setSearch={setSearch}
-        posts={searchResults}
-        width={width} />}> 
+        posts={searchResults} />}> 
 
           <Route path='post' element={<NewPost
           posts={posts} setPosts={setPosts} />} />
