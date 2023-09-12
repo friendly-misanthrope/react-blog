@@ -1,3 +1,5 @@
+import { FaLaptop, FaTabletAlt, FaMobileAlt } from 'react-icons/fa'
+
 const Header = (props) => {
   return (
     <header className="header">
