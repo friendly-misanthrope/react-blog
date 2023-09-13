@@ -39,7 +39,9 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home 
         search={search} setSearch={setSearch}
-        posts={searchResults} />}> 
+        posts={searchResults}
+        fetchError={fetchError}
+        isLoading={isLoading} />}> 
 
           <Route path='post' element={<NewPost
           posts={posts} setPosts={setPosts} />} />

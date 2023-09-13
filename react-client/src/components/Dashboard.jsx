@@ -2,7 +2,7 @@ import Post from "./Post"
 
 const Dashboard = (props) => {
 
-  const { posts } = props
+  const { posts, fetchError, isLoading } = props
 
   return (
     <>

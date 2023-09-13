@@ -9,7 +9,7 @@ import useWindowSize from '../../hooks/useWindowSize'
 const Home = (props) => {
   const { width } = useWindowSize()
   const location = useLocation()
-  const { search, setSearch, posts } = props
+  const { search, setSearch, posts, fetchError, isLoading } = props
 
   return (
     <main className="home">
@@ -18,7 +18,9 @@ const Home = (props) => {
   
       {
         location.pathname === '/' ?
-          <Dashboard posts={posts.reverse()} />
+          <Dashboard posts={posts.reverse()} 
+          fetchError={fetchError}
+          isLoading={isLoading} />
           :null
       }
       <Outlet />
