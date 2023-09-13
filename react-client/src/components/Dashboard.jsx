@@ -9,15 +9,15 @@ const Dashboard = (props) => {
       <h2 className="dashboard-header">Post Feed</h2>
       <section className="feed">
         {
-          posts.length ?
-            posts.map(post => (
-              <div key={post.id}>
-                <Post post={post} />
-                <hr />
-              </div>
-
-            ))
-            : <h3 className="no-posts">There are no posts to display</h3>
+          isLoading ?
+            <h3 className="no-posts loading">Loading posts</h3>
+            : posts.length ?
+              posts.map(post => (
+                <div key={post.id}>
+                  <Post post={post} />
+                </div>
+              ))
+              : <h3 className="no-posts">There are no posts to display</h3>
         }
       </section>
     </>
@@ -26,3 +26,4 @@ const Dashboard = (props) => {
 }
 
 export default Dashboard;
+
