@@ -1,12 +1,11 @@
 import { useState, useEffect, useContext } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import api from '../api/posts'
 import DataContext from '../context/DataContext'
 
 const EditPost = () => {
 
-  const navigate = useNavigate()
-  const { posts, setPosts } = useContext(DataContext)
+  const { posts, setPosts, navigate } = useContext(DataContext)
   const { id } = useParams()
   const originalPost = posts.find(post => (post.id) === id)
 
