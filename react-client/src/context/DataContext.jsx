@@ -13,6 +13,7 @@ export const DataProvider = ({ children }) => {
     const [searchResults, setSearchResults] = useState([])
     const [posts, setPosts] = useState([])
     const { data, fetchError, isLoading } = useAxiosFetch("http://localhost:3500/posts")
+    const { width } = useWindowSize()
 
   // setPosts to data from useAxiosFetch 
     useEffect(() => {

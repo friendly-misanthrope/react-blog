@@ -9,6 +9,7 @@ import EditPost from './components/EditPost'
 import { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import useAxiosFetch from './hooks/useAxiosFetch'
+import { DataProvider } from './context/DataContext'
 
 
 const App = () => {
@@ -34,28 +35,30 @@ const App = () => {
   
   return (
     <div className='App'>
-      <Routes>
-        <Route path='/' element={<Home 
-        search={search} setSearch={setSearch}
-        posts={searchResults}
-        fetchError={fetchError}
-        isLoading={isLoading} />}> 
+      <DataProvider>
+        <Routes>
+          <Route path='/' element={<Home 
+          search={search} setSearch={setSearch}
+          posts={searchResults}
+          fetchError={fetchError}
+          isLoading={isLoading} />}> 
 
-          <Route path='post' element={<NewPost
-          posts={posts} setPosts={setPosts} />} />
+            <Route path='post' element={<NewPost
+            posts={posts} setPosts={setPosts} />} />
 
-          <Route path='post/:id' element={<PostPage 
-          posts={posts} setPosts={setPosts} />} />
+            <Route path='post/:id' element={<PostPage 
+            posts={posts} setPosts={setPosts} />} />
 
-          <Route path='post/:id/edit' element={<EditPost 
-          posts={posts} setPosts={setPosts} />} />
+            <Route path='post/:id/edit' element={<EditPost 
+            posts={posts} setPosts={setPosts} />} />
 
-          <Route path='about' element={<About />} />
+            <Route path='about' element={<About />} />
 
-        </Route>
+          </Route>
 
-        <Route path='*' element={<Missing />} />
-      </Routes>
+          <Route path='*' element={<Missing />} />
+        </Routes>
+      </DataProvider>
     </div>
   );
 } 
