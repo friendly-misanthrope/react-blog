@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from 'react'
-import { useNavigate, useLocation } from 'react-router-dom'
+import { useNavigate, useLocation, useParams } from 'react-router-dom'
 import api from '../api/posts'
 import useWindowSize from '../hooks/useWindowSize'
 import useAxiosFetch from '../hooks/useAxiosFetch'
@@ -16,6 +16,7 @@ export const DataProvider = ({ children }) => {
     const { width } = useWindowSize()
     const location = useLocation()
     const navigate = useNavigate()
+    
 
   // setPosts to data from useAxiosFetch 
     useEffect(() => {
@@ -69,6 +70,19 @@ export const DataProvider = ({ children }) => {
         })
     }
 
+    // PostPage delete handler
+      const handleDelete = (id) => {
+        if (window.confirm(`Are you sure you want to delete '${post.title}'? This action cannot be undone!`)) {
+          api.delete(`/posts/${id}`)
+          .then(() => {
+            const updatedPostList = posts.filter(post => post.id !== id)
+            setPosts(updatedPostList)
+            navigate('/')
+          })
+          .catch(err => console.log(err))
+        }
+      }
+
   return (
     <DataContext.Provider value={{
       search,
@@ -86,7 +100,8 @@ export const DataProvider = ({ children }) => {
       newPost,
       setNewPost,
       handleNewPostChange,
-      handleNewPostSubmit
+      handleNewPostSubmit,
+      handleDelete
     }}>
       { children }
     </DataContext.Provider>

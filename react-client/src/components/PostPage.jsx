@@ -1,25 +1,13 @@
-import { useParams, useNavigate, Link } from 'react-router-dom'
-import api from '../api/posts'
+import { useParams, Link } from 'react-router-dom'
+import DataContext from '../context/DataContext'
+import { useContext } from 'react'
 
-const PostPage = (props) => {
+const PostPage = () => {
 
+  const { handleDelete, posts } = useContext(DataContext)
   const { id } = useParams()
-  const navigate = useNavigate()
-  const { posts, setPosts } = props
   const post = posts.find(post => post.id.toString() === id)
-
-  const handleDelete = (id) => {
-    if (window.confirm(`Are you sure you want to delete '${post.title}'? This action cannot be undone!`)) {
-      api.delete(`/posts/${id}`)
-      .then(() => {
-        const updatedPostList = posts.filter(post => post.id !== id)
-        setPosts(updatedPostList)
-        navigate('/')
-      })
-      .catch(err => console.log(err))
-    }
-  }
-
+  
   return (
     <section className='post-page'>
       <article className='post full-post'>

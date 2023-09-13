@@ -37,17 +37,11 @@ const App = () => {
     <div className='App'>
       <DataProvider>
         <Routes>
-          <Route path='/' element={<Home 
-          search={search} setSearch={setSearch}
-          posts={searchResults}
-          fetchError={fetchError}
-          isLoading={isLoading} />}> 
+          <Route path='/' element={<Home />}> 
 
-            <Route path='post' element={<NewPost
-            posts={posts} setPosts={setPosts} />} />
+            <Route path='post' element={<NewPost />} />
 
-            <Route path='post/:id' element={<PostPage 
-            posts={posts} setPosts={setPosts} />} />
+            <Route path='post/:id' element={<PostPage />} />
 
             <Route path='post/:id/edit' element={<EditPost 
             posts={posts} setPosts={setPosts} />} />
