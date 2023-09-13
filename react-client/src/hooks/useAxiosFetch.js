@@ -15,20 +15,17 @@ const useAxiosFetch = (endpoint) => {
       axios.get(endpoint, {
         signal: abortController.signal
       })
-      .then((req) => {
-        if (isMounted) {
-          setData(req.data)
-          setFetchError(null)
-        }
-      })
-      .catch((err) => {
-        if (isMounted) {
-          if (axios.isCancel(err)) {
-          console.error('request cancelled', err.message)
+        .then((req) => {
+          if (isMounted) {
+            setData(req.data)
+            setFetchError(null)
           }
-        }
-        
-      })
+        })
+        .catch((err) => {
+          if (axios.isCancel(err)) {
+            console.log(err.message)
+          }
+        })
       isMounted && setTimeout(() => setIsLoading(false), 1500)
     }
 
@@ -41,8 +38,8 @@ const useAxiosFetch = (endpoint) => {
     }
 
     return cleanUp
-    
-  },[endpoint])
+
+  }, [endpoint])
 
   return { data, fetchError, isLoading }
 }
