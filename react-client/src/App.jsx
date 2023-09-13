@@ -17,8 +17,6 @@ const App = () => {
   const [posts, setPosts] = useState([])
   const { data, fetchError, isLoading } = useAxiosFetch("http://localhost:3500/posts")
   
-
-  // fetch all posts
   
 
   useEffect(() => {
