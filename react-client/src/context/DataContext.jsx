@@ -32,6 +32,43 @@ export const DataProvider = ({ children }) => {
       setSearchResults(results.reverse())
     },[posts, search])
 
+  // NewPost State
+  const [newPost, setNewPost] = useState({
+    id: crypto.randomUUID(),
+    title: '',
+    body: '',
+    createdAt: null,
+    updatedAt: null
+  })
+
+  // NewPost change handler
+    const handleNewPostChange = (e) => {
+      setNewPost(prevState => {return {...prevState, [e.target.name]: e.target.value}})
+    }
+
+  // NewPost submit handler
+    const handleNewPostSubmit = (e) => {
+      e.preventDefault()
+      newPost.createdAt = new Date().toLocaleString()
+      api.post('/posts', newPost)
+        .then((req) => {
+          setPosts([...posts, req.data])
+          setNewPost({
+            id: crypto.randomUUID(),
+            title: '',
+            body: ''
+          })
+          navigate('/')
+        })
+        .catch((err) => {
+          if (err.response) {
+            console.log(err.response)
+          } else {
+            console.log(err.message)
+          }
+        })
+    }
+
   return (
     <DataContext.Provider value={{
       search,
@@ -45,7 +82,11 @@ export const DataProvider = ({ children }) => {
       isLoading,
       width,
       location,
-      navigate
+      navigate,
+      newPost,
+      setNewPost,
+      handleNewPostChange,
+      handleNewPostSubmit
     }}>
       { children }
     </DataContext.Provider>
