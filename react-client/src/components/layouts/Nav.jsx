@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom'
+import DataContext from '../../context/DataContext'
+import { useContext } from 'react'
 
-const Nav = (props) => {
+const Nav = () => {
 
-  const {search, setSearch} = props
+  const {search, setSearch} = useContext(DataContext)
 
   const changeHandler = (e) => {
     setSearch(e.target.value)

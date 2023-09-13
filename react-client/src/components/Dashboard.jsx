@@ -1,8 +1,10 @@
 import Post from "./Post"
+import DataContext from '../context/DataContext'
+import { useContext } from 'react'
 
-const Dashboard = (props) => {
+const Dashboard = () => {
 
-  const { posts, fetchError, isLoading } = props
+  const { posts, isLoading } = useContext(DataContext)
 
   return (
     <>

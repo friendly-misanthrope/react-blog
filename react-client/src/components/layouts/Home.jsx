@@ -4,12 +4,15 @@ import Footer from "./Footer"
 import Dashboard from "../Dashboard"
 import { useLocation, Outlet } from 'react-router-dom'
 import useWindowSize from '../../hooks/useWindowSize'
+import DataContext from '../../context/DataContext'
+import { useContext } from 'react'
 
 
-const Home = (props) => {
+const Home = () => {
   const { width } = useWindowSize()
   const location = useLocation()
-  const { search, setSearch, posts, fetchError, isLoading } = props
+
+  const { search, setSearch, posts, fetchError, isLoading } = useContext(DataContext)
 
   return (
     <main className="home">
@@ -18,9 +21,7 @@ const Home = (props) => {
   
       {
         location.pathname === '/' ?
-          <Dashboard posts={posts.reverse()} 
-          fetchError={fetchError}
-          isLoading={isLoading} />
+          <Dashboard  />
           :null
       }
       <Outlet />

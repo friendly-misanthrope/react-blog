@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import api from '../api/posts'
 import useWindowSize from '../hooks/useWindowSize'
 import useAxiosFetch from '../hooks/useAxiosFetch'
@@ -8,12 +8,14 @@ const DataContext = createContext({})
 
 export const DataProvider = ({ children }) => {
 
-  // State
+  // App State
     const [search, setSearch] = useState('')
     const [searchResults, setSearchResults] = useState([])
     const [posts, setPosts] = useState([])
     const { data, fetchError, isLoading } = useAxiosFetch("http://localhost:3500/posts")
     const { width } = useWindowSize()
+    const location = useLocation()
+    const navigate = useNavigate()
 
   // setPosts to data from useAxiosFetch 
     useEffect(() => {
@@ -32,9 +34,20 @@ export const DataProvider = ({ children }) => {
 
   return (
     <DataContext.Provider value={{
-      width
+      search,
+      setSearch,
+      searchResults,
+      setSearchResults,
+      posts,
+      setPosts,
+      data,
+      fetchError,
+      isLoading,
+      width,
+      location,
+      navigate
     }}>
-      {children}
+      { children }
     </DataContext.Provider>
   )
 }

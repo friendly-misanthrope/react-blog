@@ -1,4 +1,4 @@
-const Footer = (props) => {
+const Footer = () => {
   const fullYear = new Date()
   return (
     <footer className="footer">
