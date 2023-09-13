@@ -9,8 +9,7 @@ import useWindowSize from '../../hooks/useWindowSize'
 const Home = (props) => {
   const { width } = useWindowSize()
   const location = useLocation()
-  const { search, setSearch } = props
-  const { posts } = props
+  const { search, setSearch, posts } = props
 
   return (
     <main className="home">
