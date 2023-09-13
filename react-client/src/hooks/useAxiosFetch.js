@@ -26,7 +26,7 @@ const useAxiosFetch = (endpoint) => {
             console.log(err.message)
           }
         })
-      isMounted && setTimeout(() => setIsLoading(false), 1500)
+      isMounted && setIsLoading(false)
     }
 
     fetchData(endpoint)
