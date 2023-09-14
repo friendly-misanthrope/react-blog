@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom"
 
-const Post = (props) => {
-
-  const { post } = props
+const Post = ({post}) => {
 
   return (
     <Link to={`/post/${post.id}`}>

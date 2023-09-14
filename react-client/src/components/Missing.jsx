@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 
-const Missing = (props) => {
+const Missing = () => {
 
   const navigate = useNavigate()
 

@@ -14,9 +14,9 @@ const Dashboard = () => {
           isLoading ?
             <h3 className="no-posts loading">Loading posts</h3>
             : searchResults.length ?
-              searchResults.map(post => (
-                <div key={post.id}>
-                  <Post post={post} />
+              searchResults.map(result => (
+                <div key={result.id}>
+                  <Post post={result} />
                 </div>
               ))
               : <h3 className="no-posts">There are no posts to display</h3>

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-const About = (props) => {
+const About = () => {
   return (
     <section className="about">
       <div className="content-container">
