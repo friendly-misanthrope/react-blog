@@ -15,7 +15,7 @@ const App = () => {
     <div className='App'>
       <DataProvider>
         <Routes>
-
+          
           <Route path='/' element={<Home />}> 
             <Route path='post' element={<NewPost />} />
             <Route path='post/:id' element={<PostPage />} />
@@ -24,7 +24,6 @@ const App = () => {
           </Route>
 
           <Route path='*' element={<Missing />} />
-          
         </Routes>
       </DataProvider>
     </div>

@@ -4,7 +4,7 @@ import { useContext } from 'react'
 
 const Dashboard = () => {
 
-  const { posts, isLoading } = useContext(DataContext)
+  const { searchResults, isLoading } = useContext(DataContext)
 
   return (
     <>
@@ -13,8 +13,8 @@ const Dashboard = () => {
         {
           isLoading ?
             <h3 className="no-posts loading">Loading posts</h3>
-            : posts.length ?
-              posts.map(post => (
+            : searchResults.length ?
+              searchResults.map(post => (
                 <div key={post.id}>
                   <Post post={post} />
                 </div>
