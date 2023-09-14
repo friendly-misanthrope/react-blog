@@ -7,7 +7,7 @@ const Nav = () => {
   const {search, setSearch} = useContext(DataContext)
 
   const changeHandler = (e) => {
-    setSearch(e.target.value)
+    setSearch(e.target.value.trim())
   }
 
   return (
