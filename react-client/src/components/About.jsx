@@ -7,10 +7,9 @@ const About = () => {
         <h2>About This Application</h2>
         <p className="about-content">
           ReactJS Blog is a frontend project that I undertook to build proficiency with React Router V6.
-          It uses a mock backend comprised of the json-server Node.js package and the Axios API to
-          persist post data locally.
-          This is my own code, but the idea for the project came from <a href="https://www.yesdavidgray.com">Dave Gray</a>.
-          Make sure to check out his site and give him the credit he deserves.
+          It uses a json-server mock backend to persist post data locally.
+          While the source code is my own, the idea for this project came from <a href="https://www.youtube.com/@DaveGrayTeachesCode/videos">Dave Gray</a>.
+          Make sure to check out his channel and give him the credit he deserves.
         </p>
       </div>
 
