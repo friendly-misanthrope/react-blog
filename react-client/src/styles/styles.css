@@ -1,4 +1,14 @@
 /********** Global Styles **********/
+html {
+  background: linear-gradient(90deg, rgba(194,194,194,1) 0%, rgba(255,239,213,1) 50%, rgba(194,194,194,1) 100%);
+}
+
+body {
+  max-width: 60rem;
+  margin: 0 auto;
+  background-color: papayawhip;
+}
+
 .App {
   width: 100%;
   background-color: papayawhip;
@@ -181,6 +191,7 @@
 }
 .footer {
   width: 100%;
+  max-width: 60rem;
   background-repeat: repeat;
   background-attachment: scroll;
   background-position: 0% 0%;
@@ -192,6 +203,7 @@
   color: whitesmoke;
   justify-content: space-evenly;
   padding: 0.4rem;
+  margin: 0 auto;
 }
 .footer > p {
   margin: 0;
