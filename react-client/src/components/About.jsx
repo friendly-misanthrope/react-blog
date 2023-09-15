@@ -24,13 +24,6 @@ const About = () => {
               </div>
             </Link>
 
-            <Link to={'https://nodejs.org'}>
-              <div className="stack">
-                <p className="node">Node.js</p>
-                <img src="./assets/node-js-svgrepo-com.svg" alt="NodeJS logo" />
-              </div>
-            </Link>
-
             <Link to={"https://www.getbootstrap.com"}>
               <div className="stack">
                 <p className="bootstrap">Bootstrap</p>
